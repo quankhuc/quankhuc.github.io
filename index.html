@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quan Khuc — AI/ML Professional Portfolio</title>
+<meta name="description" content="Professional portfolio of Quan Khuc: full-stack developer building applied AI/ML expertise. Artifacts, value proposition, and project write-ups.">
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #5a5a5a;
+    --accent: #2f6fd6;
+    --accent-soft: #eaf2fd;
+    --gold: #c9971f;
+    --gold-soft: #fff8e6;
+    --line: #e2e2e2;
+    --bg: #fafafa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  header {
+    background: #fff;
+    border-bottom: 3px solid var(--accent);
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  h1 { margin: 0 0 0.25rem; font-size: 2.1rem; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+  main { padding: 2.5rem 1.5rem 4rem; }
+  section { margin-bottom: 3rem; }
+  h2 {
+    font-size: 1.35rem;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 0.4rem;
+    margin: 0 0 1rem;
+  }
+  .vp {
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 1.05rem;
+  }
+  .artifact-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .artifact-card h3 { margin: 0 0 0.25rem; font-size: 1.2rem; }
+  .artifact-kicker {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+  }
+  .artifact-visual {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+  .artifact-visual iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
+  }
+  .visual-caption {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: right;
+    margin: 0.35rem 0 0;
+  }
+  dl.artifact-meta { margin: 1.25rem 0 0; }
+  dl.artifact-meta dt {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 1rem;
+  }
+  dl.artifact-meta dd { margin: 0.2rem 0 0; }
+  a { color: var(--accent); }
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .btn:hover { opacity: 0.9; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Quan Khuc</h1>
+    <p class="tagline">Full-stack developer building applied AI &amp; machine learning expertise</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="bio">
+    <h2>About Me</h2>
+    <p>
+      I'm a full-stack software developer with production experience shipping web applications
+      end to end — from database and API design to the interfaces people actually use. I'm
+      currently deepening that foundation with graduate coursework in artificial intelligence
+      and machine learning at Indiana Wesleyan University (AIML-500: Machine Learning
+      Fundamentals), with the goal of moving from <em>building software to spec</em> to
+      <em>framing problems, designing AI-informed solutions, and evaluating whether they
+      actually work</em>.
+    </p>
+    <p>
+      This portfolio is a working record of that journey. Each artifact is a real deliverable
+      from my coursework and projects, presented with the objective behind it, the process and
+      tools used to build it, and the value it offers you, the reader.
+    </p>
+  </section>
+
+  <section id="value-proposition">
+    <h2>Personal Value Proposition</h2>
+    <p class="vp">
+      I bring production engineering discipline — careful scoping, verification, and iteration —
+      to AI and machine learning work. Where many approach AI purely experimentally, I treat it
+      the way I treat shipping software: define the problem, check the claims, test the result,
+      and communicate it so both technical and non-technical audiences can act on it.
+    </p>
+  </section>
+
+  <section id="artifacts">
+    <h2>Artifacts</h2>
+
+    <article class="artifact-card">
+      <span class="artifact-kicker">Artifact 1 · Workshop One</span>
+      <h3>The Evolution of AI &amp; Machine Learning: A Visual Timeline</h3>
+
+      <div class="artifact-visual">
+        <iframe src="artifacts/ai-ml-timeline.html" title="Interactive timeline: the evolution of AI and machine learning, 1943 to present" loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">
+        Embedded preview — <a href="artifacts/ai-ml-timeline.html">open the full timeline in its own page</a>
+      </p>
+
+      <dl class="artifact-meta">
+        <dt>Title</dt>
+        <dd>The Evolution of AI &amp; Machine Learning: A Visual Timeline — eight decades of AI
+        history in one visual, from McCulloch &amp; Pitts (1943) to today's frontier-model race.</dd>
+
+        <dt>Objective</dt>
+        <dd>Created for AIML-500 Workshop 1 to answer a question most AI histories gloss over:
+        why did progress stall twice? The timeline is built as an argument, not a list — the two
+        "AI winters" are shaded, the booms are in color, and 2012 (AlexNet) is marked as the
+        hinge where algorithms, hardware, and data finally aligned.</dd>
+
+        <dt>Process</dt>
+        <dd>I researched milestones across a documentary history of AI, the IEEE Computer
+        Society's "Evolution of AI," and Our World in Data's "Brief History of AI." I used an
+        AI assistant (Claude) to draft the initial milestone outline, then verified every key
+        date against those two published sources — and caught one date the AI had gotten wrong,
+        which shaped the artifact's own thesis about verification. I then grouped the milestones
+        into eight eras and designed the visual so the boom–winter–boom pattern reads at a glance.</dd>
+
+        <dt>Tools</dt>
+        <dd>Hand-coded HTML/CSS (no site builder or template); Claude as a research assistant
+        with source cross-checking against IEEE Computer Society and Our World in Data.</dd>
+
+        <dt>Value</dt>
+        <dd>This timeline gives teams and decision-makers a two-minute mental model of AI
+        progress: breakthroughs arrive when algorithms, hardware, and data line up — not from
+        clever ideas alone. That pattern is a practical lens for setting realistic expectations
+        on AI initiatives and reading today's hype cycle against history.</dd>
+      </dl>
+
+      <p style="margin-top:1.25rem;">
+        <a class="btn" href="artifacts/ai-ml-timeline.html">View Artifact 1 — Full Timeline</a>
+      </p>
+    </article>
+
+    <p style="color:var(--muted); font-size:0.9rem; margin-top:1rem;">
+      More artifacts from this course will be added here as the program progresses.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Quan Khuc · AI/ML Professional Portfolio · Indiana Wesleyan University — AIML-500
+</footer>
+
+</body>
+</html>

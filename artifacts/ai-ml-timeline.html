@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Evolution of AI &amp; Machine Learning: A Timeline</title>
+<style>
+  :root {
+    --winter-bg: #e6e6e6;
+    --winter-dot: #8a8a8a;
+    --boom-bg: #eaf2fd;
+    --boom-dot: #2f6fd6;
+    --hinge-border: #c9971f;
+    --hinge-bg: #fff8e6;
+    --ink: #1c1c1c;
+    --muted: #5a5a5a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #ffffff;
+  }
+  header {
+    text-align: center;
+    padding: 40px 20px 24px;
+    border-bottom: 1px solid #ddd;
+  }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p.byline { margin: 0; color: var(--muted); font-size: 14px; }
+  header p.subtitle { margin: 10px auto 0; max-width: 640px; color: var(--muted); font-size: 15px; }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 16px 0;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .swatch.winter { background: var(--winter-bg); border: 1px solid #bbb; }
+  .swatch.boom { background: var(--boom-bg); border: 1px solid #bcd3f2; }
+  .swatch.hinge { background: var(--hinge-bg); border: 1px solid var(--hinge-border); }
+
+  main.timeline { max-width: 900px; margin: 0 auto; padding: 10px 0 60px; }
+
+  .era { position: relative; padding: 34px 20px 26px; }
+  .era.winter { background: var(--winter-bg); }
+  .era.boom { background: var(--boom-bg); }
+
+  .era::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 3px;
+    background: rgba(0,0,0,0.15);
+    transform: translateX(-50%);
+  }
+
+  .era-label {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 22px;
+    position: relative;
+    z-index: 1;
+  }
+  .era-label .years { font-weight: 400; text-transform: none; letter-spacing: normal; }
+
+  .milestone {
+    position: relative;
+    width: 50%;
+    margin-bottom: 18px;
+    z-index: 1;
+  }
+  .milestone.left  { margin-right: 50%; text-align: right; }
+  .milestone.right { margin-left: 50%; text-align: left; }
+
+  .card {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    max-width: 100%;
+  }
+  .milestone.hinge .card {
+    border: 2px solid var(--hinge-border);
+    background: var(--hinge-bg);
+  }
+  .hinge-tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--hinge-border);
+    margin-bottom: 4px;
+  }
+
+  .year { font-size: 15px; font-weight: 700; }
+  .event { font-size: 14px; font-weight: 600; margin: 2px 0 4px; }
+  .why { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+  .dot {
+    position: absolute;
+    top: 14px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--boom-dot);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+  .era.winter .dot { background: var(--winter-dot); }
+  .milestone.left .dot  { right: -6px; }
+  .milestone.right .dot { left: -6px; }
+  .milestone.hinge .dot { background: var(--hinge-border); width: 16px; height: 16px; top: 12px; }
+  .milestone.left.hinge .dot  { right: -8px; }
+  .milestone.right.hinge .dot { left: -8px; }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 20px 50px;
+    font-size: 12.5px;
+    color: var(--muted);
+    border-top: 1px solid #ddd;
+  }
+  footer h3 { font-size: 13px; color: var(--ink); margin: 18px 0 6px; }
+  footer p { margin: 4px 0; }
+
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .era { break-inside: avoid; }
+  }
+
+  @media (max-width: 640px) {
+    .milestone { width: 100%; }
+    .milestone.left, .milestone.right { margin: 0 0 16px; text-align: left; }
+    .era::before { left: 12px; }
+    .dot, .milestone.left .dot, .milestone.right .dot { left: 6px; right: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>The Evolution of AI &amp; Machine Learning</h1>
+  <p class="byline">Quan Khuc · AIML-500-01N1C · Workshop One, Discussion 1.3</p>
+  <p class="subtitle">A boom–bust–boom story: two AI winters separated by breakthroughs that usually weren't a smarter idea: they were the hardware, data, or funding finally catching up to an idea that already existed.</p>
+</header>
+
+<div class="legend">
+  <span><i class="swatch winter"></i> AI Winter: funding/interest collapse</span>
+  <span><i class="swatch boom"></i> Growth &amp; breakthroughs</span>
+  <span><i class="swatch hinge"></i> The hinge moment (2012)</span>
+</div>
+
+<main class="timeline">
+
+  <section class="era boom">
+    <p class="era-label">Era 1: Foundations <span class="years">(1940s–1956)</span></p>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1943</div>
+        <div class="event">McCulloch &amp; Pitts model the artificial neuron</div>
+        <div class="why">The first math model of how a brain cell might compute: the seed of neural networks.</div>
+      </div>
+    </div>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1950</div>
+        <div class="event">Turing's "Computing Machinery and Intelligence"</div>
+        <div class="why">Proposes the Turing Test and asks: can machines think?</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1956</div>
+        <div class="event">The Dartmouth Workshop</div>
+        <div class="why">John McCarthy coins "artificial intelligence." The field's official birth.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era boom">
+    <p class="era-label">Era 2: Early Optimism <span class="years">(1957–1969)</span></p>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1958</div>
+        <div class="event">Rosenblatt's Perceptron</div>
+        <div class="why">The first neural network that could learn from data, wildly overhyped at the time.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1966</div>
+        <div class="event">ELIZA (Joseph Weizenbaum)</div>
+        <div class="why">A chatbot that mimicked a therapist. People bonded with it, which spooked its own creator.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era winter">
+    <p class="era-label">Era 3: The First AI Winter <span class="years">(1970s)</span></p>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1969</div>
+        <div class="event">Minsky &amp; Papert publish <em>Perceptrons</em></div>
+        <div class="why">Proved single-layer perceptrons couldn't solve basic problems like XOR. Funding and faith collapsed.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1973</div>
+        <div class="event">The Lighthill Report</div>
+        <div class="why">A damning UK review that gutted AI funding. The field goes quiet.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era boom">
+    <p class="era-label">Era 4: Expert Systems Boom <span class="years">(1980s)</span></p>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1980</div>
+        <div class="event">Expert systems go commercial (XCON, MYCIN)</div>
+        <div class="why">Rule-based systems captured human expertise: the first time AI made real money.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1986</div>
+        <div class="event">Backpropagation popularized (Rumelhart, Hinton, Williams)</div>
+        <div class="why">The training method that finally made multi-layer neural nets learnable. It quietly sets up everything after it.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era winter">
+    <p class="era-label">Era 5: The Second AI Winter <span class="years">(late 1980s–early 1990s)</span></p>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">~1987–1993</div>
+        <div class="event">Expert systems collapse</div>
+        <div class="why">They were brittle and expensive to maintain. Money dries up again.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era boom">
+    <p class="era-label">Era 6: Machine Learning Grows Up <span class="years">(1990s–2000s)</span></p>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">1997</div>
+        <div class="event">Deep Blue beats Garry Kasparov at chess</div>
+        <div class="why">First time a machine beat a world champion: a huge public moment.</div>
+      </div>
+    </div>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2006</div>
+        <div class="event">Geoffrey Hinton reframes "deep learning"</div>
+        <div class="why">Shows deep nets can be trained effectively: the rebrand that starts the comeback.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2009</div>
+        <div class="event">ImageNet (Fei-Fei Li)</div>
+        <div class="why">A massive labeled image dataset. Turns out data was the missing ingredient.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era boom">
+    <p class="era-label">Era 7: The Deep Learning Explosion <span class="years">(2012–2016)</span></p>
+    <div class="milestone right hinge">
+      <div class="dot"></div>
+      <div class="card">
+        <span class="hinge-tag">Turning point</span>
+        <div class="year">2012</div>
+        <div class="event">AlexNet wins ImageNet</div>
+        <div class="why">Deep nets trained on Nvidia GPUs crush the competition. The algorithms had existed for years. The hardware finally caught up.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2014</div>
+        <div class="event">GANs (Ian Goodfellow)</div>
+        <div class="why">Networks that generate realistic fake images: the front edge of generative AI.</div>
+      </div>
+    </div>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2016</div>
+        <div class="event">AlphaGo beats Lee Sedol at Go</div>
+        <div class="why">A game everyone assumed was a decade away from being solved.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="era boom">
+    <p class="era-label">Era 8: The Generative Era <span class="years">(2017–present)</span></p>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2017</div>
+        <div class="event">The Transformer ("Attention Is All You Need")</div>
+        <div class="why">The architecture behind every modern large language model.</div>
+      </div>
+    </div>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2018–2020</div>
+        <div class="event">BERT, GPT-2, GPT-3</div>
+        <div class="why">Language models scale up and start to feel general.</div>
+      </div>
+    </div>
+    <div class="milestone left">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2022</div>
+        <div class="event">ChatGPT launches</div>
+        <div class="why">100M users in two months. AI stops being a research topic and becomes a household tool.</div>
+      </div>
+    </div>
+    <div class="milestone right">
+      <div class="dot"></div>
+      <div class="card">
+        <div class="year">2023–now</div>
+        <div class="event">The arms race</div>
+        <div class="why">OpenAI, Google, Anthropic, and Meta trade blows on frontier models. Corporate rivalry is now the main engine of progress.</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <h3>Sources</h3>
+  <p>Putchuon – "Put You On." (2024, May 30). <em>The entire history of artificial intelligence (Last 100 years)</em> [Video]. YouTube.</p>
+  <p>IEEE Computer Society. (n.d.). <em>The evolution of AI: From foundations to future prospects.</em></p>
+  <p>Bender, E., &amp; Our World in Data. (n.d.). <em>A brief history of artificial intelligence.</em></p>
+</footer>
+
+</body>
+</html>
