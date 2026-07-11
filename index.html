@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quan Khuc — AI/ML Professional Portfolio</title>
-<meta name="description" content="Professional portfolio of Quan Khuc: full-stack developer building applied AI/ML expertise. Artifacts, value proposition, and project write-ups.">
+<title>Quan Khuc: AI/ML Portfolio</title>
+<meta name="description" content="Quan Khuc, full-stack developer moving into applied AI and machine learning. Coursework artifacts, value proposition, and project write-ups.">
 <style>
   :root {
     --ink: #1c1c1c;
@@ -17,6 +17,7 @@
     --bg: #fafafa;
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -24,16 +25,39 @@
     background: var(--bg);
     line-height: 1.6;
   }
+  .wrap { max-width: 860px; margin: 0 auto; }
+
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: saturate(160%) blur(8px);
+    -webkit-backdrop-filter: saturate(160%) blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.topnav .wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 0.7rem 1.5rem;
+  }
+  nav.topnav .brand { font-weight: 700; margin-right: auto; letter-spacing: -0.01em; }
+  nav.topnav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+  nav.topnav a:hover { color: var(--accent); }
+  nav.topnav a.brand:hover { color: var(--ink); }
+
   header {
     background: #fff;
     border-bottom: 3px solid var(--accent);
-    padding: 3.5rem 1.5rem 2.5rem;
+    padding: 3.25rem 1.5rem 2.5rem;
   }
-  .wrap { max-width: 860px; margin: 0 auto; }
-  h1 { margin: 0 0 0.25rem; font-size: 2.1rem; letter-spacing: -0.02em; }
-  .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+  h1 { margin: 0 0 0.35rem; font-size: 2.25rem; letter-spacing: -0.02em; }
+  .tagline { color: var(--muted); font-size: 1.08rem; margin: 0; max-width: 44rem; }
+  .hero-links { margin-top: 1.35rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
   main { padding: 2.5rem 1.5rem 4rem; }
-  section { margin-bottom: 3rem; }
+  section { margin-bottom: 3rem; scroll-margin-top: 72px; }
   h2 {
     font-size: 1.35rem;
     border-bottom: 2px solid var(--line);
@@ -47,6 +71,22 @@
     border-radius: 0 6px 6px 0;
     font-size: 1.05rem;
   }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .skill-group {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .skill-group h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--accent); }
+  .skill-group ul { margin: 0; padding-left: 1.1rem; }
+  .skill-group li { margin: 0.25rem 0; font-size: 0.95rem; }
   .artifact-card {
     background: #fff;
     border: 1px solid var(--line);
@@ -106,7 +146,15 @@
     font-weight: 600;
     font-size: 0.95rem;
   }
+  .btn.ghost { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
   .btn:hover { opacity: 0.9; }
+  .progress-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 1.25rem;
+    border-top: 1px dashed var(--line);
+    padding-top: 1rem;
+  }
   footer {
     border-top: 1px solid var(--line);
     padding: 1.5rem;
@@ -118,41 +166,89 @@
 </head>
 <body>
 
-<header>
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#top" class="brand">Quan Khuc</a>
+    <a href="#bio">About</a>
+    <a href="#value-proposition">Value</a>
+    <a href="#skills">Skills</a>
+    <a href="#artifacts">Artifacts</a>
+    <a href="https://github.com/quankhuc">GitHub</a>
+  </div>
+</nav>
+
+<header id="top">
   <div class="wrap">
     <h1>Quan Khuc</h1>
-    <p class="tagline">Full-stack developer building applied AI &amp; machine learning expertise</p>
+    <p class="tagline">
+      Full-stack developer moving into applied AI and machine learning. I like to build
+      things that work, then check whether they actually do.
+    </p>
+    <div class="hero-links">
+      <a class="btn" href="#artifacts">See my work</a>
+      <a class="btn ghost" href="https://github.com/quankhuc">GitHub</a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
 
   <section id="bio">
-    <h2>About Me</h2>
+    <h2>About me</h2>
     <p>
-      I'm a full-stack software developer with production experience shipping web applications
-      end to end — from database and API design to the interfaces people actually use. I'm
-      currently deepening that foundation with graduate coursework in artificial intelligence
-      and machine learning at Indiana Wesleyan University (AIML-500: Machine Learning
-      Fundamentals), with the goal of moving from <em>building software to spec</em> to
-      <em>framing problems, designing AI-informed solutions, and evaluating whether they
-      actually work</em>.
+      I'm a full-stack developer. I've shipped production web apps end to end: the database,
+      the API, and the front end people actually click on. Right now I'm doing graduate
+      coursework in AI and machine learning at Indiana Wesleyan University (AIML-500), because
+      I want to do more than build to a spec. I want to be the person who frames the problem,
+      picks an AI approach that fits it, and checks whether the thing works before calling it
+      done.
     </p>
     <p>
-      This portfolio is a working record of that journey. Each artifact is a real deliverable
-      from my coursework and projects, presented with the objective behind it, the process and
-      tools used to build it, and the value it offers you, the reader.
+      This site is where I keep that work. Everything here is real: something I built for a
+      course or a project, not a mock-up. For each artifact I've written down what I was after,
+      how I made it, what I used, and why it's worth your time.
     </p>
   </section>
 
   <section id="value-proposition">
-    <h2>Personal Value Proposition</h2>
+    <h2>Personal value proposition</h2>
     <p class="vp">
-      I bring production engineering discipline — careful scoping, verification, and iteration —
-      to AI and machine learning work. Where many approach AI purely experimentally, I treat it
-      the way I treat shipping software: define the problem, check the claims, test the result,
-      and communicate it so both technical and non-technical audiences can act on it.
+      Most people treat AI like a science experiment. I treat it like software I have to ship:
+      scope the problem, question the claims, test the result, and explain it plainly to whoever
+      has to act on it. That engineering discipline is what I bring to AI and ML work, and it's
+      usually the part people skip.
     </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills &amp; tools</h2>
+    <p>What I actually reach for. The AI/ML skills are the ones the artifacts below put to work.</p>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Engineering</h3>
+        <ul>
+          <li>Full-stack web: database, API, front end</li>
+          <li>Hand-coded HTML &amp; CSS</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>AI &amp; machine learning</h3>
+        <ul>
+          <li>Matching method to problem: classic ML vs. deep learning</li>
+          <li>Right-sizing a model for cost and explainability</li>
+          <li>Reading AI history and claims critically</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Practice</h3>
+        <ul>
+          <li>Research and source verification</li>
+          <li>Technical writing for a mixed audience</li>
+          <li>Using AI assistants, then checking their output</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="artifacts">
@@ -166,41 +262,64 @@
         <iframe src="artifacts/ai-ml-timeline.html" title="Interactive timeline: the evolution of AI and machine learning, 1943 to present" loading="lazy"></iframe>
       </div>
       <p class="visual-caption">
-        Embedded preview — <a href="artifacts/ai-ml-timeline.html">open the full timeline in its own page</a>
+        Embedded preview. <a href="artifacts/ai-ml-timeline.html">Open the full timeline in its own page</a>
       </p>
 
       <dl class="artifact-meta">
         <dt>Title</dt>
-        <dd>The Evolution of AI &amp; Machine Learning: A Visual Timeline — eight decades of AI
-        history in one visual, from McCulloch &amp; Pitts (1943) to today's frontier-model race.</dd>
+        <dd>The Evolution of AI &amp; Machine Learning: A Visual Timeline. Eight decades of AI in
+        one interactive picture, from McCulloch &amp; Pitts (1943) to today's frontier-model
+        race.</dd>
+
+        <dt>Introduction</dt>
+        <dd>One screen, eight decades. I laid the history out so you can see AI's boom-and-bust
+        rhythm at a glance instead of reading through a wall of dates.</dd>
+
+        <dt>Description</dt>
+        <dd>A hand-coded HTML/CSS timeline. I grouped the milestones into eight eras, shaded the
+        two "AI winters," put the boom years in color, and marked 2012 (AlexNet) as the turning
+        point where algorithms, hardware, and data finally lined up. You read the whole arc top
+        to bottom.</dd>
 
         <dt>Objective</dt>
-        <dd>Created for AIML-500 Workshop 1 to answer a question most AI histories gloss over:
-        why did progress stall twice? The timeline is built as an argument, not a list — the two
-        "AI winters" are shaded, the booms are in color, and 2012 (AlexNet) is marked as the
-        hinge where algorithms, hardware, and data finally aligned.</dd>
+        <dd>I built it for AIML-500 Workshop 1 to answer something most AI histories skip: why
+        did the field stall out twice? So I made it an argument, not a list. The winters are
+        shaded, the booms are in color, and 2012 is the hinge everything turns on.</dd>
 
         <dt>Process</dt>
-        <dd>I researched milestones across a documentary history of AI, the IEEE Computer
-        Society's "Evolution of AI," and Our World in Data's "Brief History of AI." I used an
-        AI assistant (Claude) to draft the initial milestone outline, then verified every key
-        date against those two published sources — and caught one date the AI had gotten wrong,
-        which shaped the artifact's own thesis about verification. I then grouped the milestones
-        into eight eras and designed the visual so the boom–winter–boom pattern reads at a glance.</dd>
+        <dd>I pulled milestones from a documentary history of AI, the IEEE Computer Society's
+        "Evolution of AI," and Our World in Data's "Brief History of AI." I had Claude draft a
+        first outline, then checked every date against those sources, and found one Claude got
+        wrong. That mistake became the whole point of the piece: verify what the machine hands
+        you. Then I grouped everything into eight eras and laid it out so the boom, winter, boom
+        pattern jumps out.</dd>
 
-        <dt>Tools</dt>
-        <dd>Hand-coded HTML/CSS (no site builder or template); Claude as a research assistant
-        with source cross-checking against IEEE Computer Society and Our World in Data.</dd>
+        <dt>Tools and Technologies Used</dt>
+        <dd>Hand-coded HTML and CSS, no site builder or template. Claude as a research
+        assistant, with every date cross-checked against IEEE and Our World in Data.</dd>
 
-        <dt>Value</dt>
-        <dd>This timeline gives teams and decision-makers a two-minute mental model of AI
-        progress: breakthroughs arrive when algorithms, hardware, and data line up — not from
-        clever ideas alone. That pattern is a practical lens for setting realistic expectations
-        on AI initiatives and reading today's hype cycle against history.</dd>
+        <dt>Value Proposition</dt>
+        <dd>It gives you a two-minute mental model of how AI actually moves: the big jumps come
+        when algorithms, hardware, and data line up, not from a clever idea on its own. That's a
+        handy filter for reading today's hype.</dd>
+
+        <dt>Unique Value</dt>
+        <dd>Most AI timelines are just a list of dates. This one has a point of view: it leans
+        on the two winters to explain why progress stalled. And catching Claude's wrong date is
+        exactly why the piece ends up being about not trusting machine output blindly.</dd>
+
+        <dt>Relevance</dt>
+        <dd>AI hype is loud right now. Knowing the real history helps you tell a genuine
+        breakthrough from a press release, and the habit of checking claims is worth more than
+        the timeline itself.</dd>
+
+        <dt>References</dt>
+        <dd>IEEE Computer Society, "The Evolution of AI"; Our World in Data, "The Brief History
+        of Artificial Intelligence"; a documentary history of AI used to cross-check dates.</dd>
       </dl>
 
       <p style="margin-top:1.25rem;">
-        <a class="btn" href="artifacts/ai-ml-timeline.html">View Artifact 1 — Full Timeline</a>
+        <a class="btn" href="artifacts/ai-ml-timeline.html">View Artifact 1: Full Timeline</a>
       </p>
     </article>
 
@@ -209,61 +328,84 @@
       <h3>Machine Learning vs. Deep Learning: Matching the Method to the Problem</h3>
 
       <div class="artifact-visual">
-        <iframe src="artifacts/ml-vs-dl-report.pdf#view=FitH" title="Report: Machine Learning vs. Deep Learning — matching the method to the problem" loading="lazy"></iframe>
+        <iframe src="artifacts/ml-vs-dl-report.pdf#view=FitH" title="Report: Machine Learning vs. Deep Learning, matching the method to the problem" loading="lazy"></iframe>
       </div>
       <p class="visual-caption">
-        Embedded preview — <a href="artifacts/ml-vs-dl-report.pdf">open the full report (PDF)</a>
+        Embedded preview. <a href="artifacts/ml-vs-dl-report.pdf">Open the full report (PDF)</a>
       </p>
 
       <dl class="artifact-meta">
         <dt>Title</dt>
-        <dd>Machine Learning vs. Deep Learning: Matching the Method to the Problem — a technical
-        decision framework, illustrated with two mirror-image real-world cases: email spam
-        filtering and diabetic-retinopathy screening.</dd>
+        <dd>Machine Learning vs. Deep Learning: Matching the Method to the Problem. A short
+        decision guide, built on two opposite cases: email spam filtering and diabetic-retinopathy
+        screening.</dd>
+
+        <dt>Introduction</dt>
+        <dd>Anyone can define machine learning and deep learning. The real question on a project
+        is narrower: which one does this problem need, and can you defend the call? That's what
+        this report works through.</dd>
+
+        <dt>Description</dt>
+        <dd>A short report (PDF) built around two cases that pull in opposite directions: spam
+        filtering and reading retinal scans. For each one I argue why a method fits and why the
+        other is the wrong tool, back it with real systems, and boil it down to a single rule.</dd>
 
         <dt>Objective</dt>
-        <dd>Written for AIML-500 Workshop 2 to go past <em>defining</em> machine learning and deep
-        learning and answer the harder question: which one does a given problem actually need, and
-        why? The report is built as an argument — two cases where each method is clearly right, and
-        in each case an explicit account of why the <em>other</em> method is the wrong tool.</dd>
+        <dd>Written for AIML-500 Workshop 2. Rather than just define the two, I wanted the harder
+        answer: which does a given problem actually need, and why? So I picked two cases where
+        the answer is clear-cut, and for each one I also say why the other method would be a
+        mistake.</dd>
 
         <dt>Process</dt>
-        <dd>I anchored on the core distinction from the Module 2 lesson — classical ML uses features
-        a human names and extracts by hand; deep learning learns features directly from raw data. I
-        chose two mirror-image cases so the comparison argues itself (spam → ML, retinal-image
-        diagnosis → DL), argued both sides of each (why the fitting method fits and why the
-        alternative fails), grounded every claim in real deployments with citations (Gmail blocking
-        &gt;99.9% of spam; Google Health's retinopathy model matching board-certified
-        ophthalmologists — Gulshan et al., <em>JAMA</em>, 2016), and distilled it to one decision
-        rule.</dd>
+        <dd>I started from the Module 2 distinction: classic ML runs on features a human picks by
+        hand, deep learning learns them straight from raw data. Then I chose two cases that argue
+        themselves. Spam goes to ML; reading retinal scans goes to deep learning. I made the case
+        both ways for each, grounded it in real deployments (Gmail blocks over 99.9% of spam;
+        Google Health's model matched board-certified ophthalmologists, per Gulshan et al.,
+        <em>JAMA</em>, 2016), and ended on one decision rule.</dd>
 
-        <dt>Tools</dt>
-        <dd>Written technical report exported to a shareable PDF; the Module 2 lesson as the
-        conceptual anchor; peer-reviewed and industry sources (Gulshan et al., <em>JAMA</em> 2016;
-        Google Safety Center / Google Workspace filtering statistics) for verification.</dd>
+        <dt>Tools and Technologies Used</dt>
+        <dd>A written report exported to a shareable PDF. The Module 2 lesson as the anchor, plus
+        real sources to check my claims (Gulshan et al., <em>JAMA</em> 2016; Google's own
+        spam-filtering numbers).</dd>
 
-        <dt>Value</dt>
-        <dd>This piece shows I can <strong>right-size</strong> an AI solution — recognize when a
-        cheaper, explainable model beats a neural network, and defend the call with evidence. Paired
-        with the timeline (Artifact 1), which shows I can research and communicate AI clearly, it
-        demonstrates the complementary skill: the technical judgment to choose the right method and
-        justify it to a mixed technical and non-technical audience.</dd>
+        <dt>Value Proposition</dt>
+        <dd>It shows I can right-size an AI solution: spot when a cheaper, explainable model beats
+        a neural network, and back the call with evidence. Next to the timeline, which shows I can
+        research and explain AI, this shows the other half of the job, picking the right tool and
+        defending it to a room that's half technical and half not.</dd>
+
+        <dt>Unique Value</dt>
+        <dd>I didn't list differences. I stress-tested each choice from both sides, the case for
+        the right method and the case against the wrong one, using two cases picked as opposites
+        so the rule falls out on its own.</dd>
+
+        <dt>Relevance</dt>
+        <dd>Teams reach for deep learning by reflex and pay for it in data, compute, and models
+        nobody can explain. Choosing the right method is one of the least glamorous and most
+        expensive calls in applied AI.</dd>
+
+        <dt>References</dt>
+        <dd>Gulshan et al., "Development and Validation of a Deep Learning Algorithm for Detection
+        of Diabetic Retinopathy in Retinal Fundus Photographs," <em>JAMA</em>, 2016; Google's
+        spam-filtering statistics (Safety Center / Workspace); AIML-500 Module 2 lesson.</dd>
       </dl>
 
       <p style="margin-top:1.25rem;">
-        <a class="btn" href="artifacts/ml-vs-dl-report.pdf">View Artifact 2 — Full Report (PDF)</a>
+        <a class="btn" href="artifacts/ml-vs-dl-report.pdf">View Artifact 2: Full Report (PDF)</a>
       </p>
     </article>
 
-    <p style="color:var(--muted); font-size:0.9rem; margin-top:1rem;">
-      More artifacts from this course will be added here as the program progresses.
+    <p class="progress-note">
+      <strong>2 of 5 required artifacts published.</strong> The rest go up here as AIML-500
+      moves along, each written up against the same template.
     </p>
   </section>
 
 </main>
 
 <footer>
-  Quan Khuc · AI/ML Professional Portfolio · Indiana Wesleyan University — AIML-500<br>
+  Quan Khuc · AI/ML Portfolio · Indiana Wesleyan University, AIML-500<br>
   <a href="https://github.com/quankhuc">github.com/quankhuc</a>
 </footer>
 
