@@ -93,6 +93,7 @@
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    scroll-margin-top: 72px;
   }
   .artifact-card h3 { margin: 0 0 0.25rem; font-size: 1.2rem; }
   .artifact-kicker {
@@ -245,6 +246,7 @@
         <ul>
           <li>Research and source verification</li>
           <li>Technical writing for a mixed audience</li>
+          <li>Clear handoffs for datasets and ML experiments</li>
           <li>Using AI assistants, then checking their output</li>
         </ul>
       </div>
@@ -481,9 +483,85 @@
       </p>
     </article>
 
+    <article class="artifact-card" id="artifact-4" style="margin-top:2rem;">
+      <span class="artifact-kicker">Artifact 4 · ML Team Communication</span>
+      <h3>Making the Call Clear: Reproducible Work Starts with a Precise Handoff</h3>
+
+      <div class="artifact-visual">
+        <iframe src="artifacts/ml-team-communication-reflection.pdf#view=FitH" title="Reflection: Making the Call Clear in a machine-learning team" loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">
+        Embedded preview. <a href="artifacts/ml-team-communication-reflection.pdf">Open the full reflection (PDF)</a>
+      </p>
+
+      <dl class="artifact-meta">
+        <dt>Title</dt>
+        <dd>Making the Call Clear: Reproducible Work Starts with a Precise Handoff. A reflection
+        on how one vague instruction can split an ML team across different data and make its
+        results impossible to compare.</dd>
+
+        <dt>Introduction</dt>
+        <dd>A model can be trained correctly and still produce a useless comparison if the team
+        uses two versions of the data. This piece looks at the communication failure that can
+        cause exactly that problem.</dd>
+
+        <dt>Description</dt>
+        <dd>A one-page leadership reflection built around an instructor-authorized hypothetical
+        ML group project. One vague request sends three teammates down different paths: one
+        cleans the newest raw dataset, another trains on an older normalized file, and the third
+        waits because no owner was named.</dd>
+
+        <dt>Objective</dt>
+        <dd>I wrote this for AIML-500 to examine how my direct, task-focused communication style
+        could create technical errors during collaborative ML work. My goal was to turn a broad
+        lesson about clarity into a concrete workflow lesson about ownership, data inputs,
+        expected outputs, and deadlines.</dd>
+
+        <dt>Process</dt>
+        <dd>I started with one deliberately incomplete message: "Please finish preprocessing and
+        run the baseline model by Thursday." I traced every detail it leaves unresolved, including
+        the owner, dataset version, preprocessing steps, output, and exact deadline. Then I
+        followed the consequences through to the team meeting, where metrics cannot be compared
+        and work has to be repeated. The revision turns those gaps into a practical communication
+        check: name the owner and input, define what finished means, set a precise deadline, and
+        confirm that each person understood the same assignment. At my instructor's direction, I
+        used an AI assistant to help create and organize the hypothetical incident. The PDF labels
+        that assistance and does not present the scenario as a real event.</dd>
+
+        <dt>Tools and Technologies Used</dt>
+        <dd>The AIML-500 reflection prompt, a machine-learning workflow involving preprocessing
+        and baseline-model training, 1 Corinthians 14:8–9 and Genesis 11:6–7 as reflection
+        sources, and an AI assistant used under instructor direction with disclosure.</dd>
+
+        <dt>Value Proposition</dt>
+        <dd>This artifact shows that I treat communication as part of model quality. Before a team
+        compares metrics, everyone needs the same data, steps, ownership, and definition of done.
+        Making those details explicit prevents wasted runs and makes the result easier to
+        reproduce.</dd>
+
+        <dt>Unique Value</dt>
+        <dd>Instead of discussing communication as a general soft skill, the reflection connects
+        ambiguity to a specific technical failure: two valid-looking model runs whose metrics
+        cannot be compared because their inputs differ.</dd>
+
+        <dt>Relevance</dt>
+        <dd>ML work is collaborative and dependent on consistent inputs. A precise handoff can be
+        the difference between a reproducible experiment and a meeting spent tracing which file
+        each person used.</dd>
+
+        <dt>References</dt>
+        <dd>1 Corinthians 14:8–9; Genesis 11:6–7; AIML-500 communication-reflection prompt; the
+        instructor-authorized hypothetical ML team scenario included in the artifact.</dd>
+      </dl>
+
+      <p style="margin-top:1.25rem;">
+        <a class="btn" href="artifacts/ml-team-communication-reflection.pdf">View Artifact 4: Full Reflection (PDF)</a>
+      </p>
+    </article>
+
     <p class="progress-note">
-      <strong>3 of 5 required artifacts published.</strong> The rest go up here as AIML-500
-      moves along, each written up against the same template.
+      <strong>4 of 5 required artifacts published.</strong> The last one will go up as AIML-500
+      moves along and will use the same template.
     </p>
   </section>
 
