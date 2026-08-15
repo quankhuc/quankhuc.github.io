@@ -172,6 +172,7 @@
     <a href="#top" class="brand">Quan Khuc</a>
     <a href="#bio">About</a>
     <a href="#value-proposition">Value</a>
+    <a href="#audience">Audience</a>
     <a href="#skills">Skills</a>
     <a href="#artifacts">Artifacts</a>
     <a href="https://github.com/quankhuc">GitHub</a>
@@ -221,6 +222,23 @@
     </p>
   </section>
 
+  <section id="audience">
+    <h2>Who this is for</h2>
+    <p>
+      Three readers, in order. <strong>Hiring managers and technical leads</strong> deciding whether
+      I can do applied AI/ML work: the artifacts are the evidence, and each one says what I was
+      after and how I checked it. <strong>Engineers and data scientists</strong> who want to see how
+      I reason: the fraud-detection audit and the ML-vs-deep-learning report both argue a position
+      and show the trade-off, rather than summarizing a topic.
+      <strong>Instructors and classmates</strong> evaluating the coursework: every artifact names
+      its assignment, its sources, and where I used an AI assistant.
+    </p>
+    <p>
+      What I want any of them to walk away with: I check claims before I repeat them, including my
+      own and including a model's.
+    </p>
+  </section>
+
   <section id="skills">
     <h2>Skills &amp; tools</h2>
     <p>What I actually reach for. The AI/ML skills are the ones the artifacts below put to work.</p>
@@ -238,6 +256,9 @@
         <ul>
           <li>Matching method to problem: classic ML vs. deep learning</li>
           <li>Right-sizing a model for cost and explainability</li>
+          <li>Data audits: sources, label quality, leakage</li>
+          <li>Time-aware validation and imbalanced-class metrics</li>
+          <li>Fairness, drift monitoring, and human oversight design</li>
           <li>Reading AI history and claims critically</li>
         </ul>
       </div>
@@ -559,9 +580,106 @@
       </p>
     </article>
 
+    <article class="artifact-card" id="artifact-5" style="margin-top:2rem;">
+      <span class="artifact-kicker">Artifact 5 · Capstone Group Project</span>
+      <h3>Credit Card Fraud Detection: End-to-End ML System Analysis and Redesign</h3>
+
+      <div class="artifact-visual">
+        <iframe src="artifacts/fraud-detection-system-redesign.pdf#view=FitH" title="Report: Credit Card Fraud Detection, end-to-end ML system analysis and redesign" loading="lazy"></iframe>
+      </div>
+      <p class="visual-caption">
+        Embedded preview. <a href="artifacts/fraud-detection-system-redesign.pdf">Open the full report (PDF)</a>
+      </p>
+
+      <dl class="artifact-meta">
+        <dt>Title</dt>
+        <dd>Credit Card Fraud Detection: End-to-End ML System Analysis and Redesign. A ten-person
+        reverse-engineering of a production fraud system across the full ML lifecycle, from data
+        audit through monitoring, with a redesign that names what it cannot fix.</dd>
+
+        <dt>Introduction</dt>
+        <dd>Most ML coursework stops at the model. This one starts after it: where the data comes
+        from, what the label actually is, how the system is validated, who it hurts when it is
+        wrong, and how anyone would know.</dd>
+
+        <dt>Description</dt>
+        <dd>An eight-page report (PDF) covering six lifecycle stages: problem definition and
+        stakeholders, data audit and preprocessing, model selection and validation, fairness and
+        privacy, monitoring and drift detection, and a system redesign proposal. Seven tables carry
+        the analysis, including a source-by-source data audit, a preprocessing pipeline with the
+        failure mode attached to each step, and a subgroup impact assessment.</dd>
+
+        <dt>Objective</dt>
+        <dd>Written for the AIML-500 group assignment. My own section was the data audit: identify
+        the real data sources behind an issuer-side fraud model and the preprocessing the pipeline
+        requires. I set out to answer a narrower question than the prompt asked. Does the data
+        needed to measure the system's stated goal actually exist?</dd>
+
+        <dt>Process</dt>
+        <dd>I audited the system from the card issuer's position, since that determines what data
+        exists at all, and worked backward from the authorization message to the systems that
+        produce it: the auth stream, the posted ledger, the account master, disputes and network
+        fraud reports, device telemetry, vendor scores, case management, and servicing logs. Two
+        constraints turned out to govern everything else. The authorization round trip is budgeted
+        in the low hundreds of milliseconds, which eliminates more candidate features than any
+        statistical test does. And the label is not observed at decision time, since a card-absent
+        fraud dispute can be filed up to 120 days later. The finding I carried into the group's
+        redesign was uncomfortable: a declined transaction produces no purchase and no dispute, so
+        the system never learns whether the decline was correct. False-positive rate, the metric
+        closest to the group's stated objective of not disrupting legitimate customers, has no
+        ground truth behind it. We documented that as an open limitation rather than claiming the
+        redesign solved it. I then integrated ten members' sections into a single report, merged
+        seven separate reference lists into one APA list, and cut roughly two thirds of the length
+        by removing duplicated coverage. AI assistance is disclosed in the report itself.</dd>
+
+        <dt>Tools and Technologies Used</dt>
+        <dd>Payment infrastructure references (ISO 8583 authorization fields, Visa TC40 and
+        Mastercard SAFE fraud reporting, PCI DSS 4.0.1 tokenization requirements), the selective
+        labels literature (Lakkaraju et al., 2017), walk-forward validation and PR-AUC evaluation
+        practice, the NIST AI Risk Management Framework, and hand-written HTML/CSS for the report
+        layout and PDF. Claude was used for drafting and condensing, with sources verified
+        independently.</dd>
+
+        <dt>Value Proposition</dt>
+        <dd>This is the artifact that shows I can evaluate an ML system rather than build one. The
+        skill on display is finding the gap between what a system claims to optimize and what its
+        data can actually measure, then saying so in writing instead of routing around it.</dd>
+
+        <dt>Unique Value</dt>
+        <dd>The redesign section ends with a limitation, not a win. Ten people wrote a proposal to
+        improve a fraud system, and the honest conclusion was that its central fairness metric
+        cannot be computed from the data the system collects. Naming that, and proposing a
+        randomized release of borderline declines as the only real way to get the missing
+        counterfactual, is worth more than a cleaner-sounding redesign would have been.</dd>
+
+        <dt>Relevance</dt>
+        <dd>Every deployed ML system that makes a decision about a person has this shape: delayed
+        labels, a feedback loop that hides its own errors, and subgroups that absorb the cost of
+        false positives. Fraud detection is a clean case to learn it on because the money makes the
+        trade-offs explicit.</dd>
+
+        <dt>References</dt>
+        <dd>Lakkaraju, H., Kleinberg, J., Leskovec, J., Ludwig, J., &amp; Mullainathan, S. (2017).
+        The selective labels problem. In <em>Proceedings of the 23rd ACM SIGKDD International
+        Conference on Knowledge Discovery and Data Mining</em> (pp. 275–284);
+        Saito, T., &amp; Rehmsmeier, M. (2015). The precision-recall plot is more informative than
+        the ROC plot. <em>PLoS ONE, 10</em>(3);
+        National Institute of Standards and Technology. (2023). <em>Artificial intelligence risk
+        management framework (AI RMF 1.0)</em>;
+        PCI Security Standards Council. (2024). <em>Payment Card Industry data security standard</em>
+        (Version 4.0.1);
+        Nilson Report. (2026, January 7). <em>Global card fraud losses at $33 billion</em>.
+        Full reference list in the report.</dd>
+      </dl>
+
+      <p style="margin-top:1.25rem;">
+        <a class="btn" href="artifacts/fraud-detection-system-redesign.pdf">View Artifact 5: Full Report (PDF)</a>
+      </p>
+    </article>
+
     <p class="progress-note">
-      <strong>4 of 5 required artifacts published.</strong> The last one will go up as AIML-500
-      moves along and will use the same template.
+      <strong>5 of 5 required artifacts published.</strong> Ordered by workshop, each using the
+      same template so you can compare them directly.
     </p>
   </section>
 
